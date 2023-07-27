@@ -1,0 +1,169 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 40px 80px;
+}
+
+.main, footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-option {
+    width: 110px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-option a, #work {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: #D21312;
+    background-color: white;
+    border: 0;
+}
+
+.nav-option a:hover, #work:hover {
+    font-size: 20px;
+    color: #F15A59;
+    cursor: pointer;
+}
+
+
+
+.title {
+    width: 574px;
+    height: 68px;
+    background-color: #070A52;
+    border-radius: 15px;
+    box-shadow: 4px 4px 7px rgb(174, 174, 174);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.title h1 {
+    color: white;
+    font-size: 40;
+    font-weight: 500;
+}
+
+
+
+
+
+.tasks {
+    margin-top: 50px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 15px;
+    box-shadow: 4px 4px 7px rgb(174, 174, 174);
+}
+
+.taskBox {
+    width: 574px;
+    height: fit-content;
+    min-height: 45px;
+    border: 1px solid #AAAAAA;
+    border-radius: 15px;
+    display: flex;
+    gap: 20px;
+}
+
+input[type="checkbox"] {
+    margin-left: 20px;
+}
+
+input[type="checkbox"]:checked + p {
+    text-decoration: line-through;
+    text-decoration-color: #F15A59;
+    text-decoration-thickness: 2.5px;
+}
+
+.firstBox {
+    border-radius: 15px 15px 0px 0px;
+}
+
+.middleBox {
+    border-top: 0;
+    border-radius: 0;
+}
+
+.lastBox {
+    border-top: 0;
+    border-radius: 0px 0px 15px 15px;
+}
+
+#newitemBox button {
+    background-color: #D21312;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    margin-top: 5px;
+    position: relative;
+    left: 20px;
+}
+
+#newitemBox button:hover {
+    background-color: #F15A59;
+}
+
+#newitemBox input {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    width: 450px;
+    height: 50px;
+    border: none;
+    outline: none;
+    position: relative;
+    bottom: 5px;
+    left: 20px;
+}
+
+
+
+
+
+
+
+
+
+footer {
+    margin-top: 50px;
+    color: #070A52;
+    font-size: 16px;
+}
+
+
+@media (max-width: 800px) {
+    .title {
+        width: 450px;
+        height: 60px;
+    }
+
+    .title h1 {
+        font-size: 30;
+    }
+
+    .taskBox {
+        width: 450px;
+    }
+
+    #newitemBox input {
+        font-size: 18px;
+        width: 350px;
+    }
+
+}

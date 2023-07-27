@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Font Montserrat-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>To Do</title>
+</head>
+<body>
+    <%- include("partials/nav.ejs") %>
+
+    <section class="main">
+        <div class="title">
+            <h1><%= day %>,  <%= month %> <%= dayDate %></h1>
+        </div>
+    
+        <!--Classes for taskBox: firstBox, middleBox, lastBox
+            Example of a taskbox:
+            <div class="taskBox firstBox">
+                <input type="checkbox">
+                <p>task to do</p>
+            </div>
+        -->
+
+        <div class="tasks">
+            <% if (tasksList.length > 0) { %>
+                <% for (let i = 0; i < tasksList.length; i++) { %>
+                    <div class="taskBox <%= i == 0 ? 'firstBox' : 'middleBox' %>">
+                        <input type="checkbox">
+                        <p><%= tasksList[i] %></p>
+                    </div>
+                <% } %>   
+            <% } %>
+        
+        
+            <div class="taskBox <%= tasksList.length > 0 ? 'lastBox' : '' %>" id="newitemBox">
+                <form action="/submit" method="post">
+                    <input type="text" name="todoTask" placeholder="New item">
+                    <button type="submit"><img src="images/mas.png" alt=""></button>
+                </form>
+            </div>
+        </div>
+        
+    </section>
+
+
+
+
+    <%- include("partials/footer.ejs") %>
+
+</body>
+</html>

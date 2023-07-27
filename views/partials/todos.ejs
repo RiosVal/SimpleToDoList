@@ -1,0 +1,18 @@
+<div class="tasks">
+    <% if (tasksList.length > 0) { %>
+        <% for (let i = 0; i < tasksList.length; i++) { %>
+            <div class="taskBox <%= i == 0 ? 'firstBox' : 'middleBox' %>">
+                <input type="checkbox">
+                <p><%= tasksList[i] %></p>
+            </div>
+        <% } %>   
+    <% } %>
+
+
+    <div class="taskBox <%= tasksList.length > 0 ? 'lastBox' : '' %>" id="newitemBox">
+        <form action="/submit" method="post">
+            <input type="text" name="todoTask" placeholder="New item">
+            <button type="submit"><img src="images/mas.png" alt=""></button>
+        </form>
+    </div>
+</div>
